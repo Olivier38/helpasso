@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :categories
+  resources :categories, only: [:index, :show]
   resources :advices
   root 'advices#index'
   # The priority is based upon order of creation: first created -> highest priority.
