@@ -8,6 +8,5 @@
 Category.create(name: 'Site web')
 Category.create(name: 'Référencement')
 Category.create(name: 'Réseaux sociaux')
-Category.create(name: 'Réseaux spécialisés')
-Category.create(name: 'Mobile')
+Category.create(name: 'Réseaux sociaux spécialisés')
 Category.create(name: 'Collecte de dons')
