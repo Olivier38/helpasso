@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @advice.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @advice.content %>
+</p>
+
+<%= link_to 'Edit', edit_advice_path(@advice) %> |
+<%= link_to 'Back', advices_path %>
