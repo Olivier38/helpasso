@@ -5,6 +5,7 @@ class AdvicesController < ApplicationController
   # GET /advices.json
   def index
     @advices = Advice.all
+    @categories = Category.all
   end
 
   # GET /advices/1
@@ -14,16 +15,19 @@ class AdvicesController < ApplicationController
 
   # GET /advices/new
   def new
+    @categories = Category.all
     @advice = Advice.new
   end
 
   # GET /advices/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /advices
   # POST /advices.json
   def create
+    @categories = Category.all
     @advice = Advice.new(advice_params)
 
     respond_to do |format|
