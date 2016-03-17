@@ -12,9 +12,12 @@
   </thead>
 
   <tbody>
+    <% @categories.each do |c| %>
+      <p><a href="#"><%= c.name %></a></p>
+    <% end %>
 
     <% @advices.each do |advice| %>
-      <tr>
+      <tr class = "cat<%= advice.category_id %>">
         <td><%= advice.name %></td>
         <td><%= advice.content %></td>
         <td><%= link_to 'Show', advice %></td>

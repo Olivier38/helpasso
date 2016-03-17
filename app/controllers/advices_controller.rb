@@ -73,6 +73,6 @@ class AdvicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advice_params
-      params.require(:advice).permit(:name, :content)
+      params.require(:advice).permit(:name, :content, :category_id)
     end
 end
