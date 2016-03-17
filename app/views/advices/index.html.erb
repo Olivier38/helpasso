@@ -9,36 +9,39 @@
       </div>
 
 <table>
-<div class="container-left col-xs-4">
- <div class="checklist-left">
+<div class="container-left">
+  <div class="checklist-left">
+ 
   </div>
+  <tbody>
   <div class="checklist-right">
-    <tbody>
       <% @categories.each do |c| %>
-        <button class="btn btn-default" type="submit"><%= c.name %></button>
+       <ul>
+         <li><button class="btn btn-default" type="submit"><%= c.name %></button></li>
+       </ul>
       <% end %>
   </div>
 </div>
      
      
      
-     <div class="container-right col-xs-8">
+     <div class="container-right">
      
       <% @advices.each do |advice| %>
-        <tr class = "cat<%= advice.category_id %> advice<%= @class += 1%>">
+        <tr>
           <div class="panel panel-default">
             <%= form_for advice do |f| %>
               <%= f.check_box :status %>
               <%= f.submit %>
             <% end %>
-            <div class="panel-heading" role="tab" id="heading1">
+            <div class="panel-heading" role="tab" class = "cat<%= advice.category_id %>"  id= "heading<%= @class += 1%>">
               <h4 class="panel-title">  
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= @class%>" aria-expanded="true" aria-controls="collapse<%= @class%>">
                   <%= advice.name %>
                 </a>
                 </h4>
               </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+              <div id="collapse<%= @class%>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= @class %>">
                 <div class="panel-body">
                   <p><%= advice.content %></p>
               <!--Bouttons show - edit - Destroy-->
