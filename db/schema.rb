@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160317112812) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "category_id"
+    t.boolean  "status"
   end
 
   create_table "categories", force: :cascade do |t|

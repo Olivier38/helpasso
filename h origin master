@@ -1,0 +1,83 @@
+[33mcommit 009233923dab6e2cecdb6708ec0b2c384296bc1c[m
+Author: valdeclem <valdeclem@gmail.com>
+Date:   Thu Mar 17 12:36:07 2016 +0100
+
+    Creation users account
+
+[33mcommit 9084ec968ef789183c2b0de9ad94a95a187b5078[m
+Author: Thomas Pageot <thomas.pageot@gmail.com>
+Date:   Thu Mar 17 11:01:25 2016 +0100
+
+    remove application.css
+
+[33mcommit 8ebd54ea163cfb06de3a92fad8384ba66f57e18f[m
+Author: Olivier38 <olivier.traveaux@gmail.com>
+Date:   Thu Mar 17 09:29:14 2016 +0100
+
+    Correction controller advices et ajout liste categories sur index
+
+[33mcommit 0c4d20660907553834b658d715f400e658c7f985[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Wed Mar 16 18:15:02 2016 +0100
+
+    preparation style
+
+[33mcommit 8473b669516f0ddc21264e51ff0dafb98939a33d[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Wed Mar 16 15:35:33 2016 +0100
+
+    Ajout choix des catégories dans form
+
+[33mcommit 2e6e0fc8bb9b113d91a99f9e1b5d291a0e12bb00[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Wed Mar 16 12:52:22 2016 +0100
+
+    modification routes
+
+[33mcommit 06ad5c8ac204ca779a81006fb301457c33e72878[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Wed Mar 16 12:46:35 2016 +0100
+
+    petit changement seed
+
+[33mcommit c19aee9aa205a6d455fe99e1f357a6b1ff5053aa[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Wed Mar 16 12:40:12 2016 +0100
+
+    Scaffold Category et ajout du seed
+
+[33mcommit 78ffad6cf7506441bf92a328dc2673f830b9326d[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Wed Mar 16 10:47:51 2016 +0100
+
+    Ajout de Bootstrap
+
+[33mcommit 64205217d6b77a3c1ecfee12a83b296c83fec137[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Tue Mar 15 17:51:57 2016 +0100
+
+    delete Procfile
+
+[33mcommit f2b5337cb511ab3240233f161e9fc33af0529a78[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Tue Mar 15 17:43:08 2016 +0100
+
+    modif gemfile 12factories
+
+[33mcommit dbcb3de9a50bcfb8a1624edee817c8eecfa57876[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Tue Mar 15 16:10:39 2016 +0100
+
+    Définir root home
+
+[33mcommit ebd46bb86b187536f37a5b8109b6cdfe41f8da90[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Tue Mar 15 15:08:38 2016 +0100
+
+    Heroku support
+
+[33mcommit 9d5f5bf5cee55f7c34b4ebf1cc24e842f2ef0a37[m
+Author: olivier <olivier.traveaux@gmail.com>
+Date:   Tue Mar 15 14:54:49 2016 +0100
+
+    genesis
