@@ -76,6 +76,6 @@ class AdvicesController < ApplicationController
     # advice[status] = "too"
     # advice[name] = "foo"
     def advice_params
-      params.require(:advice).permit(:name, :content, :category_id, :status)
+      params.require(:advice).permit(:name, :content, :category_id, :status, :linkname, :link)
     end
 end

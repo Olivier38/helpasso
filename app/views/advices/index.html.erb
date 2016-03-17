@@ -36,7 +36,9 @@
             <% end %>
             <div class="panel-heading" role="tab" class = "cat<%= advice.category_id %>"  id= "heading<%= @class += 1%>">
               <h4 class="panel-title">  
+
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= @class%>" aria-expanded="true" aria-controls="collapse<%= @class%>">
+
                   <%= advice.name %>
                 </a>
                 </h4>
@@ -44,6 +46,7 @@
               <div id="collapse<%= @class%>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= @class %>">
                 <div class="panel-body">
                   <p><%= advice.content %></p>
+                  <p><a href="<%= advice.link %>"><%= advice.linkname %></a></p>
               <!--Bouttons show - edit - Destroy-->
                   <td><%= link_to 'Show', advice %></td>
                   <td><%= link_to 'Edit', edit_advice_path(advice) %></td>
