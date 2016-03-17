@@ -4,6 +4,7 @@ class AdvicesController < ApplicationController
   # GET /advices
   # GET /advices.json
   def index
+    @class = 0
     @advices = Advice.all
     @categories = Category.all
   end

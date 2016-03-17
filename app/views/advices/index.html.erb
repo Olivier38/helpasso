@@ -1,48 +1,54 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Advices</h1>
+<div class="checklist">
+        <p>Checklist</p>
+      </div>
+
+      <div class="checklist-left">
+        
+      </div>
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |c| %>
-      <li><a href="#"><%= c.name %></a></li>
-    <% end %>
-
-    <% @advices.each do |advice| %>
-      <tr class = "cat<%= advice.category_id %>">
-        <td><div class="checkboxWrapper">
-          <input type="checkbox" id="myCheckbox" unchecked/>
-          <label for="myCheckbox">
-            <svg class="checkmark" width="56" height="56">
-              <path d="m25,36 l14,-16"
-                    style="stroke-dasharray: 27px;"></path>
-              <path d="m25,36 l-8,-9"
-                    style="stroke-dasharray: 11px;"></path>
-            </svg>
-            <svg class="cross" width="56" height="56">
-              <path d="m28,28 l-8,-8"
-                    style="stroke-dasharray: 13px;"></path>
-              <path d="m28,28 l8,8"
-                    style="stroke-dasharray: 13px;"></path>
-              <path d="m28,28 l-8,8"
-                    style="stroke-dasharray: 13px;"></path>
-              <path d="m28,28 l8,-8"
-                    style="stroke-dasharray: 13px;"></path>
-            </svg>
-          </label>
-        </div><%= advice.name %></td>
-        <td><%= advice.content %></td>
-        <td><%= link_to 'Show', advice %></td>
-        <td><%= link_to 'Edit', edit_advice_path(advice) %></td>
-        <td><%= link_to 'Destroy', advice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+<div class="container-left col-xs-4">
+ <div class="checklist-left">
+  </div>
+  <div class="checklist-right">
+    <tbody>
+      <% @categories.each do |c| %>
+        <button class="btn btn-default" type="submit"><%= c.name %></button>
+      <% end %>
+  </div>
+</div>
+     
+     
+     
+     <div class="container-right col-xs-8">
+     
+      <% @advices.each do |advice| %>
+        <tr class = "cat<%= advice.category_id %> advice<%= @class += 1%>">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading1">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <%= advice.name %>
+                </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+                <div class="panel-body">
+                  <p><%= advice.content %></p>
+                  
+                  
+                  
+              <!--Bouttons show - edit - Destroy-->
+                  <td><%= link_to 'Show', advice %></td>
+                  <td><%= link_to 'Edit', edit_advice_path(advice) %></td>
+                  <td><%= link_to 'Destroy', advice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+                </div>
+              </div>
+      <% end %>
+    </div>
   </tbody>
 </table>
 
