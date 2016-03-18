@@ -2,14 +2,17 @@
 
 <div class="checklist">
         <p>Checklist</p>
+      
+
+      <div class="checklist-left col-xs-1">
+        <div id="timeline"></div>
+        <div class="img-circle cercle" id="red"></div>
+        <div class="img-circle cercle" id="yellow"></div>
+        <div class="img-circle cercle" id="green"></div>
+        <div class="img-circle cercle" id="blue"></div>
       </div>
 
-      <div class="checklist-left">
-        
-      </div>
-
-
-<div class="container-left col-xs-4">
+<div class="container-left col-xs-3">
   <div class="checklist-left">
  
   </div>
@@ -22,29 +25,32 @@
       <% end %>
   </div>
 </div>
-     
+     </div>
      
      
      <div class="container-right col-xs-6">
      <table>
       <% @advices.each do |advice| %>
         <tr>
+         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
           <div class="panel panel-default">
-            <%= form_for advice do |f| %>
-              <%= f.check_box :status %>
-              <%= f.submit %>
-            <% end %>
+            
             <div class="panel-heading" role="tab" class = "cat<%= advice.category_id %>"  id= "heading<%= @class += 1%>">
               <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= @class%>" aria-expanded="true" aria-controls="collapse<%= @class%>">
-
-                  <%= advice.name %>
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= @class%>" aria-expanded="false" aria-controls="collapse<%= @class%>">
+                   <%= form_for advice do |f| %>
+                   <%= f.check_box :status %>
+                  <%= f.submit :class => "display-none"%>
+                   <% end %>
+                   <%= advice.name %>
                 </a>
                 </h4>
               </div>
               <div id="collapse<%= @class%>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= @class %>">
                 <div class="panel-body">
+                  
                   <p><%= advice.content %></p>
+                  <p>Ressources :</p>
                   <p><a href="<%= advice.link %>"><%= advice.linkname %></a></p>
               <!--Bouttons show - edit - Destroy-->
                   <td><%= link_to 'Show', advice %></td>
@@ -53,6 +59,7 @@
         </tr>
                 </div>
               </div>
+          </div>
       <% end %>
     </div>
   </tbody>
