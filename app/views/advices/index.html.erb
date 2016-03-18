@@ -1,34 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<div class="checklist">
-        <p>Checklist</p>
-      
-
-      <div class="checklist-left col-xs-1">
-        <div id="timeline"></div>
-        <div class="img-circle cercle" id="red"></div>
-        <div class="img-circle cercle" id="yellow"></div>
-        <div class="img-circle cercle" id="green"></div>
-        <div class="img-circle cercle" id="blue"></div>
-      </div>
-
-<div class="container-left col-xs-3">
-  <div class="checklist-left">
- 
+<div class="checklist col-xs-4">
+  <div id="btn-checklist">
+    <p>Check-List</p>
   </div>
-  <tbody>
-  <div class="checklist-right">
-      <% @categories.each do |c| %>
-       <ul>
-         <li><button class="btn btn-default" type="submit"><%= c.name %></button></li>
-       </ul>
-      <% end %>
+
+  <div class="container-left">
+    
+    <div class="checklist-right">
+        <% @categories.each do |c| %>
+        <div class="cercle col-xs-1" id="color<%= @class += 1%>"></div>
+         <ul>
+           <li><button class="btn btn-default" type="submit"><%= c.name %></button></li>
+         </ul>
+        <% end %>
+    </div>
   </div>
 </div>
-     </div>
      
      
-     <div class="container-right col-xs-6">
+     <div class="container-right col-xs-8">
      <table>
       <% @advices.each do |advice| %>
         <tr>
@@ -66,7 +57,7 @@
           </div>
       <% end %>
     </div>
-  </tbody>
+
 </table>
 
 <br>
