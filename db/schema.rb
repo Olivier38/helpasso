@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317160944) do
+ActiveRecord::Schema.define(version: 20160318090937) do
 
   create_table "advices", force: :cascade do |t|
     t.string   "name"
@@ -20,8 +20,12 @@ ActiveRecord::Schema.define(version: 20160317160944) do
     t.datetime "updated_at",  null: false
     t.integer  "category_id"
     t.boolean  "status"
-    t.string   "linkname"
-    t.text     "link"
+    t.string   "linkname1"
+    t.text     "link1"
+    t.text     "link2"
+    t.string   "linkname2"
+    t.text     "link3"
+    t.string   "linkname3"
   end
 
   create_table "categories", force: :cascade do |t|

@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: advices
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  content     :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :integer
+#  status      :boolean
+#  linkname    :string
+#  link        :text
+#
+
 class AdvicesController < ApplicationController
   before_action :set_advice, only: [:show, :edit, :update, :destroy]
 
@@ -76,6 +91,6 @@ class AdvicesController < ApplicationController
     # advice[status] = "too"
     # advice[name] = "foo"
     def advice_params
-      params.require(:advice).permit(:name, :content, :category_id, :status, :linkname, :link)
+      params.require(:advice).permit(:name, :content, :category_id, :status, :linkname1, :link1, :linkname2, :link2, :linkname3, :link3,)
     end
 end
