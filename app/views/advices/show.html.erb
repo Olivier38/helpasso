@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -9,6 +10,7 @@
   <strong>Content:</strong>
   <%= @advice.content %>
 </p>
-
+<% if user_signed_in? && current_user.email == "admin@helpasso.fr" %>
 <%= link_to 'Edit', edit_advice_path(@advice) %> |
 <%= link_to 'Back', advices_path %>
+<% end %>

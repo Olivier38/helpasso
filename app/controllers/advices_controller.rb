@@ -19,6 +19,7 @@ class AdvicesController < ApplicationController
   # GET /advices
   # GET /advices.json
   def index
+    @menu = 0
     @class = 0
     @advices = Advice.all
     @categories = Category.all

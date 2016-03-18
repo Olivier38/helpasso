@@ -11,7 +11,7 @@
         <% @categories.each do |c| %>
         <div class="cercle col-xs-1" id="color<%= @class += 1%>"></div>
          <ul>
-           <li><button class="btn btn-default" type="submit"><%= c.name %></button></li>
+           <li><button class="btn btn-default menu<%= @menu +=1%>" type="submit"><%= c.name %></button></li>
          </ul>
         <% end %>
     </div>
@@ -24,13 +24,13 @@
       <% @advices.each do |advice| %>
         <tr>
          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
-          <div class="panel panel-default">
-            
-            <div class="panel-heading" role="tab" class = "cat<%= advice.category_id %>"  id= "heading<%= @class += 1%>">
+           <div class="reset panel panel-default cat<%= advice.category_id %>">
+            <div class="reset panel-heading cat<%= advice.category_id %>" role="tab" id= "heading<%= @class += 1%>">
               <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= @class%>" aria-expanded="false" aria-controls="collapse<%= @class%>">
+                  
                    <%= form_for advice do |f| %>
-                   <%= f.check_box :status %>
+                  <%= f.check_box :status , :onclick => "this.form.submit()" , :class => "checked" %>
                   <%= f.submit :class => "display-none"%>
                    <% end %>
                    <%= advice.name %>
@@ -48,9 +48,11 @@
                     <a href="<%= advice.link3 %>"><%= advice.linkname3 %></a>
                   </p>
               <!--Bouttons show - edit - Destroy-->
+                <% if user_signed_in? && current_user.email == "admin@helpasso.fr" %>
                  <td><%= link_to 'Show', advice %></td>
                   <td><%= link_to 'Edit', edit_advice_path(advice) %></td>
                   <td><%= link_to 'Destroy', advice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
         </tr>
                 </div>
               </div>
@@ -61,5 +63,9 @@
 </table>
 
 <br>
-
+<% if user_signed_in? && current_user.email == "admin@helpasso.fr" %>
 <%= link_to 'New Advice', new_advice_path %>
+<% end %>
+
+<% if user_signed_in? && current_user.email == "admin@helpasso.fr" %>
+                  <% end %>
