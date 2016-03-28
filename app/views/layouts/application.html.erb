@@ -27,11 +27,19 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-         <li class="btn"><%= link_to "Login" , new_user_session_path %></li>
-         <li class="btn"><%= link_to "Inscription" , new_user_registration_path %></li>
-         <li class="btn"><%= link_to "Déconnexion" , destroy_user_session_path , method: :delete %></li>
-      </ul>
+      <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+           <li class="btn"><%= link_to "Login" , new_user_session_path %></li>
+           <li class="btn"><%= link_to "Inscription" , new_user_registration_path %></li>
+           <li class="btn"><%= link_to "Déconnexion" , destroy_user_session_path , method: :delete %></li>
+        </ul>
+        <% else %>
+          <ul class="nav navbar-nav navbar-right">
+           <li class="btn"><%= link_to "Login" , new_user_session_path %></li>
+           <li class="btn"><%= link_to "Inscription" , new_user_registration_path %></li>
+        </ul>
+        <% end %>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
