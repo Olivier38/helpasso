@@ -1,53 +1,19 @@
-<%= form_for(@checklist) do |f| %>
-  <% if @checklist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@checklist.errors.count, "error") %> prohibited this checklist from being saved:</h2>
+<%= simple_form_for (@checklist) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @checklist.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <%= f.input :facebook, label: 'Animez-vous une page Facebook?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+    <%= f.input :twitter, label: 'Animez-vous une page Twitter ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+    <%= f.input :linkedin, label: 'Etes-vous présent sur le réseau social professionnel LinkedIn ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+    <%= f.input :viadeo, label: 'Animez-vous une chaîne Youtube, un compte sur Viadeo ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+    <%= f.input :instagram, label: 'Etes-vous présent sur Instagram ?', error: 'Username is mandatory, please specify one', as: :radio_buttons %>
+    <%= f.input :community, label: 'Postez-vous régulièrement des informations sur les réseaux sociaux ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+    <%= f.input :cms, label: 'Utilisez-vous un système de gestion de contenu (Wordpress, Wix, etc.) ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+    <%= f.input :seo, label: 'Votre site internet s affiche t-il dans les 10 premières propositions lors d une recherche sur Google ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+    <%= f.input :crowdfunding, label: 'Avez-vous déjà utilisé des plateformes de collecte de dons / crowdfunding ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+  </div>
 
-  <div class="field">
-    <%= f.label :facebook %><br>
-    <%= f.check_box :facebook %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter %><br>
-    <%= f.check_box :twitter %>
-  </div>
-  <div class="field">
-    <%= f.label :linkedin %><br>
-    <%= f.check_box :linkedin %>
-  </div>
-  <div class="field">
-    <%= f.label :viadeo %><br>
-    <%= f.check_box :viadeo %>
-  </div>
-  <div class="field">
-    <%= f.label :instagram %><br>
-    <%= f.check_box :instagram %>
-  </div>
-  <div class="field">
-    <%= f.label :community %><br>
-    <%= f.check_box :community %>
-  </div>
-  <div class="field">
-    <%= f.label :cms %><br>
-    <%= f.check_box :cms %>
-  </div>
-  <div class="field">
-    <%= f.label :seo %><br>
-    <%= f.check_box :seo %>
-  </div>
-  <div class="field">
-    <%= f.label :crowdfunding %><br>
-    <%= f.check_box :crowdfunding %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>
