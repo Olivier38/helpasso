@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Checklists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Facebook</th>
+      <th>Twitter</th>
+      <th>Linkedin</th>
+      <th>Viadeo</th>
+      <th>Instagram</th>
+      <th>Community</th>
+      <th>Cms</th>
+      <th>Seo</th>
+      <th>Crowdfunding</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checklists.each do |checklist| %>
+      <tr>
+        <td><%= checklist.facebook %></td>
+        <td><%= checklist.twitter %></td>
+        <td><%= checklist.linkedin %></td>
+        <td><%= checklist.viadeo %></td>
+        <td><%= checklist.instagram %></td>
+        <td><%= checklist.community %></td>
+        <td><%= checklist.cms %></td>
+        <td><%= checklist.seo %></td>
+        <td><%= checklist.crowdfunding %></td>
+        <td><%= link_to 'Show', checklist %></td>
+        <td><%= link_to 'Edit', edit_checklist_path(checklist) %></td>
+        <td><%= link_to 'Destroy', checklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Checklist', new_checklist_path %>

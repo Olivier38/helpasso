@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :checklists
   devise_for :users
   resources :categories, only: [:index, :show]
   resources :advices

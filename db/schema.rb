@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318090937) do
+ActiveRecord::Schema.define(version: 20160405153434) do
 
   create_table "advices", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,23 @@ ActiveRecord::Schema.define(version: 20160318090937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "checklists", force: :cascade do |t|
+    t.boolean  "facebook"
+    t.boolean  "twitter"
+    t.boolean  "linkedin"
+    t.boolean  "viadeo"
+    t.boolean  "instagram"
+    t.boolean  "community"
+    t.boolean  "cms"
+    t.boolean  "seo"
+    t.boolean  "crowdfunding"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+  end
+
+  add_index "checklists", ["user_id"], name: "index_checklists_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
