@@ -1,3 +1,4 @@
+<!-- Si un utilisateur arrive sur cette page alors qu'il a déjà remplit le questionnaire, on ne lui affiche pas les questions. -->
 <% if current_user.checklists.exists? %>
 
   <p>Désolé, vous avez déjà remplit ce questionnaire !
