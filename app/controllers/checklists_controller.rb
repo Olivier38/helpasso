@@ -28,8 +28,8 @@ class ChecklistsController < ApplicationController
 
     respond_to do |format|
       if @checklist.save
-        format.html { redirect_to @checklist, notice: 'Checklist was successfully created.' }
-        format.json { render :show, status: :created, location: @checklist }
+        format.html { redirect_to root_path, notice: 'Merci pour ces précisions !' }
+        format.json { render :index, status: :created, location: @advices }
       else
         format.html { render :new }
         format.json { render json: @checklist.errors, status: :unprocessable_entity }

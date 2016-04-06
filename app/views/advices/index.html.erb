@@ -1,1 +1,7 @@
-<%= link_to 'Commencer maintenant !', new_checklist_path %>
+<!-- si l'utilisateur est logé et a déjà remplit le questionnaire, on lui affiche les advices. -->
+<% if user_signed_in? && current_user.checklists.exists? %>
+	<p>test</p> 
+<!-- 	Si il n'y a pas ces 2 conditions on l'invite à remplir le questionnaire -->
+<% else %>
+	<%= link_to 'Commencer maintenant !', new_checklist_path %>
+<% end %>

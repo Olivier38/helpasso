@@ -1,19 +1,28 @@
-<%= simple_form_for (@checklist) do |f| %>
-  <%= f.error_notification %>
+<% if current_user.checklists.exists? %>
 
-  <div class="form-inputs">
-    <%= f.input :facebook, label: 'Animez-vous une page Facebook?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-    <%= f.input :twitter, label: 'Animez-vous une page Twitter ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-    <%= f.input :linkedin, label: 'Etes-vous présent sur le réseau social professionnel LinkedIn ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-    <%= f.input :viadeo, label: 'Animez-vous une chaîne Youtube, un compte sur Viadeo ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-    <%= f.input :instagram, label: 'Etes-vous présent sur Instagram ?', error: 'Username is mandatory, please specify one', as: :radio_buttons %>
-    <%= f.input :community, label: 'Postez-vous régulièrement des informations sur les réseaux sociaux ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-    <%= f.input :cms, label: 'Utilisez-vous un système de gestion de contenu (Wordpress, Wix, etc.) ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-    <%= f.input :seo, label: 'Votre site internet s affiche t-il dans les 10 premières propositions lors d une recherche sur Google ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-    <%= f.input :crowdfunding, label: 'Avez-vous déjà utilisé des plateformes de collecte de dons / crowdfunding ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-  </div>
+  <p>Désolé, vous avez déjà remplit ce questionnaire !
+  Rendez-vous sur l'<%= link_to "accueil", root_path %> pour consultez nos recommandations.</p>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <% else %>
+
+    <%= simple_form_for (@checklist) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :facebook, label: 'Animez-vous une page Facebook?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+        <%= f.input :twitter, label: 'Animez-vous une page Twitter ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+        <%= f.input :linkedin, label: 'Etes-vous présent sur le réseau social professionnel LinkedIn ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+        <%= f.input :viadeo, label: 'Animez-vous une chaîne Youtube, un compte sur Viadeo ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+        <%= f.input :instagram, label: 'Etes-vous présent sur Instagram ?', error: 'Username is mandatory, please specify one', as: :radio_buttons %>
+        <%= f.input :community, label: 'Postez-vous régulièrement des informations sur les réseaux sociaux ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+        <%= f.input :cms, label: 'Utilisez-vous un système de gestion de contenu (Wordpress, Wix, etc.) ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+        <%= f.input :seo, label: 'Votre site internet s affiche t-il dans les 10 premières propositions lors d une recherche sur Google ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+        <%= f.input :crowdfunding, label: 'Avez-vous déjà utilisé des plateformes de collecte de dons / crowdfunding ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+
 <% end %>
