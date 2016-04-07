@@ -21,9 +21,12 @@ class AdvicesController < ApplicationController
   def index
     @menu = 0
     @class = 0
-    @ref = 0
     @advices = Advice.all
     @categories = Category.all
+    @checklists = Checklist.all
+    if user_signed_in?
+    @checklist = current_user.checklists
+  end
   end
 
   # GET /advices/1

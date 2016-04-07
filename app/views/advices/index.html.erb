@@ -22,23 +22,70 @@
 
 <div class="container-right col-xs-8">
   <table>
-    <% @advices.where(ref: '1').each do |advice| %>
+    <% @checklist.each do |c| %>
+      <% if c.facebook == false %>
+        <% @advices.where(ref: '1').each do |advice| %>
           <%= render :partial => "onglet", :locals => {:advice => advice} %>
-    <% end %>
+        <% end %>
+      <% else %>
+        <p> Vous avez déjà Facebook</p>
+      <% end %>
+      <% if c.twitter == false %>
         <% @advices.where(ref: '2').each do |advice| %>
-        <%= render :partial => "onglet", :locals => {:advice => advice} %>
-    <% end %>
+          <%= render :partial => "onglet", :locals => {:advice => advice} %>
+        <% end %>
+      <% else %>
+        <p> Vous avez déjà Twitter</p>
+      <% end %>
+      <% if c.linkedin == false %>
         <% @advices.where(ref: '3').each do |advice| %>
-        <%= render :partial => "onglet", :locals => {:advice => advice} %>
-    <% end %>
+          <%= render :partial => "onglet", :locals => {:advice => advice} %>
+        <% end %>
+      <% else %>
+        <p> Vous avez déjà Twitter</p>
+      <% end %>
+      <% if c.instagram == false %>
         <% @advices.where(ref: '4').each do |advice| %>
-        <%= render :partial => "onglet", :locals => {:advice => advice} %>
-    <% end %>
+          <%= render :partial => "onglet", :locals => {:advice => advice} %>
+        <% end %>
+      <% else %>
+        <p> Vous avez déjà Instagram</p>
+      <% end %>
+      <% if c.viadeo == false %>
         <% @advices.where(ref: '5').each do |advice| %>
-        <%= render :partial => "onglet", :locals => {:advice => advice} %>
-    <% end %>
+          <%= render :partial => "onglet", :locals => {:advice => advice} %>
+        <% end %>
+      <% else %>
+        <p> Vous avez déjà Viadeo</p>
+      <% end %>
+      <% if c.community == false %>
         <% @advices.where(ref: '6').each do |advice| %>
-        <%= render :partial => "onglet", :locals => {:advice => advice} %>
+          <%= render :partial => "onglet", :locals => {:advice => advice} %>
+        <% end %>
+      <% else %>
+        <p> Vous êtes déjà Community Manager</p>
+      <% end %>
+      <% if c.cms == false %>
+        <% @advices.where(ref: '7').each do |advice| %>
+          <%= render :partial => "onglet", :locals => {:advice => advice} %>
+        <% end %>
+      <% else %>
+        <p> Vous avez déjà un CMS</p>
+      <% end %>
+      <% if c.seo == false %>
+        <% @advices.where(ref: '8').each do |advice| %>
+          <%= render :partial => "onglet", :locals => {:advice => advice} %>
+        <% end %>
+      <% else %>
+        <p> Vous avez déjà un bon référencement</p>
+      <% end %>
+      <% if c.crowdfunding == false %>
+        <% @advices.where(ref: '9').each do |advice| %>
+          <%= render :partial => "onglet", :locals => {:advice => advice} %>
+        <% end %>
+      <% else %>
+        <p> Vous utilisez déjà une plateforme de crowdfunding</p>
+      <% end %>
     <% end %>
   </table>
 </div>
