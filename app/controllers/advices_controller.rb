@@ -21,6 +21,7 @@ class AdvicesController < ApplicationController
   def index
     @menu = 0
     @class = 0
+    @ref = 0
     @advices = Advice.all
     @categories = Category.all
   end
@@ -92,6 +93,6 @@ class AdvicesController < ApplicationController
     # advice[status] = "too"
     # advice[name] = "foo"
     def advice_params
-      params.require(:advice).permit(:name, :content, :category_id, :status, :linkname1, :link1, :linkname2, :link2, :linkname3, :link3,)
+      params.require(:advice).permit(:name, :content, :category_id, :status, :linkname1, :link1, :linkname2, :link2, :linkname3, :link3, :ref)
     end
 end
