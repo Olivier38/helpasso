@@ -15,4 +15,6 @@
 
 class Advice < ActiveRecord::Base
 	belongs_to :category
+	has_many :user_advices
+	has_many :users, through: :user_advices
 end

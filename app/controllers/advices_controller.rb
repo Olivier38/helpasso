@@ -11,8 +11,10 @@ class AdvicesController < ApplicationController
     @checklists = Checklist.all
     if user_signed_in?
     @checklist = current_user.checklists
+    @user_advices = UserAdvice.where(user_id: current_user).pluck(:advice_id)  
   end
-  end
+end
+
 
   # GET /advices/1
   # GET /advices/1.json
@@ -72,9 +74,8 @@ class AdvicesController < ApplicationController
   end
 
   def complete
-   @advice.completed = true
-   @advice.save
-   redirect_to root_path
+    UserAdvice.create(user_id: current_user.id, advice_id: @advice.id)
+    redirect_to root_path
   end
 
   private
