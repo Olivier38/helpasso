@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406203126) do
+ActiveRecord::Schema.define(version: 20160407143608) do
 
   create_table "advices", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160406203126) do
     t.text     "link3"
     t.string   "linkname3"
     t.integer  "ref"
+    t.boolean  "completed"
   end
 
   create_table "categories", force: :cascade do |t|

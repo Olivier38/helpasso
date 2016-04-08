@@ -1,20 +1,5 @@
-# == Schema Information
-#
-# Table name: advices
-#
-#  id          :integer          not null, primary key
-#  name        :string
-#  content     :text
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  category_id :integer
-#  status      :boolean
-#  linkname    :string
-#  link        :text
-#
-
 class AdvicesController < ApplicationController
-  before_action :set_advice, only: [:show, :edit, :update, :destroy]
+  before_action :set_advice, only: [:show, :edit, :update, :destroy, :complete]
 
   # GET /advices
   # GET /advices.json
@@ -84,6 +69,12 @@ class AdvicesController < ApplicationController
       format.html { redirect_to advices_url, notice: 'Advice was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def complete
+   @advice.completed = true
+   @advice.save
+   redirect_to root_path
   end
 
   private

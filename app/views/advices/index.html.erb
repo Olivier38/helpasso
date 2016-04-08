@@ -1,95 +1,139 @@
-<!-- si l'utilisateur est logé et a déjà remplit le questionnaire, on lui affiche les advices. -->
-<% if user_signed_in? && current_user.checklists.exists? %>
-<p id="notice"><%= notice %></p>
+<% if user_signed_in? && current_user.checklists.exists? %><!-- si l'utilisateur est loggé et a déjà remplit le questionnaire, on lui affiche les advices. -->
+    <p id="notice"><%= notice %></p>
 
-<div class="checklist col-xs-4">
-  <div id="btn-checklist">
-    <p>Check-List</p>
-  </div>
+    <div class="checklist col-xs-4">
+      <div id="btn-checklist">
+        <p>Check-List</p>
+      </div>
 
-  <div class="container-left">
-    
-    <div class="checklist-right">
-        <% @categories.each do |c| %>
-        <div class="cercle col-xs-1" id="color<%= @class += 1%>"></div>
-         <ul>
-           <li><button class="btn btn-default menu<%= @menu +=1%>" type="submit"><%= c.name %></button></li>
-         </ul>
-        <% end %>
+      <div class="container-left">
+        
+        <div class="checklist-right">
+            <% @categories.each do |c| %>
+            <div class="cercle col-xs-1" id="color<%= @class += 1%>"></div>
+             <ul>
+               <li><button class="btn btn-default menu<%= @menu +=1%>" type="submit"><%= c.name %></button></li>
+             </ul>
+            <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="container-right col-xs-8">
-  <table>
-    <% @checklist.each do |c| %>
-      <% if c.facebook == false %>
-        <% @advices.where(ref: '1').each do |advice| %>
-          <%= render :partial => "onglet", :locals => {:advice => advice} %>
+    <div class="container-right col-xs-8">
+      <table>
+        <% @checklist.each do |c| %> <!-- On applique ce qui suit pour chaque questionnaire auquel l'utilisateur à répondu. ( Checklist = le questionnaire).  Si tout va bien, il n'a pu en remplir qu'un seul.) -->
+          <% if c.facebook == false %> <!-- Si la réponse à la première question est "non" -->
+            <% @advices.where(ref: '1', completed: nil).each do |advice| %> <!-- Prend tous les advices dont la valeur Ref est "1" et qui n'ont pas encore été réalisé-->
+              <%= render :partial => "todo", :locals => {:advice => advice} %> <!-- et on utilise ici un partial pour afficher pour chacun de ces advices : son nom, son contenu, etc. (voir le fichier _onglet.html.erb) -->
+            <% end %>
+            <% @advices.where(ref: '1', completed: true).each do |advice| %> <!-- Prend tous les advices dont la valeur Ref est "1" et qui été réalisé -->
+              <%= render :partial => "done", :locals => {:advice => advice} %> <!-- On utilise ici un autre partial pour afficher différement les advices qui ont été réalisé -->
+            <% end %>
+          <% else %> <!-- Dans le cas où la réponse "oui" à la question 1 -->
+            <% @advices.where(ref: '1', completed: nil).each do |advice| %> <!-- On prend tous les advices dont la Ref est "1" -->
+              <%= render :partial => "done", :locals => {:advice => advice} %> <!-- et on les affiche avec le partial "done" de telle sorte qu'ils apparaissent comme déjà validés -->
+            <% end %>
+          <% end %>
+          <% if c.twitter == false %>
+            <% @advices.where(ref: '2', completed: nil).each do |advice| %> 
+              <%= render :partial => "todo", :locals => {:advice => advice} %> 
+            <% end %>
+            <% @advices.where(ref: '2', completed: true).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% else %>
+            <% @advices.where(ref: '2', completed: nil).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% end %>
+          <% if c.linkedin == false %>
+            <% @advices.where(ref: '3', completed: nil).each do |advice| %> 
+              <%= render :partial => "todo", :locals => {:advice => advice} %> 
+            <% end %>
+            <% @advices.where(ref: '3', completed: true).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% else %>
+            <% @advices.where(ref: '3', completed: nil).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% end %>
+          <% if c.instagram == false %>
+            <% @advices.where(ref: '4', completed: nil).each do |advice| %> 
+              <%= render :partial => "todo", :locals => {:advice => advice} %> 
+            <% end %>
+            <% @advices.where(ref: '4', completed: true).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% else %>
+            <% @advices.where(ref: '4', completed: nil).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% end %>
+          <% if c.viadeo == false %>
+            <% @advices.where(ref: '5', completed: nil).each do |advice| %> 
+              <%= render :partial => "todo", :locals => {:advice => advice} %> 
+            <% end %>
+            <% @advices.where(ref: '5', completed: true).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% else %>
+            <% @advices.where(ref: '5', completed: nil).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% end %>
+          <% if c.community == false %>
+            <% @advices.where(ref: '6', completed: nil).each do |advice| %> 
+              <%= render :partial => "todo", :locals => {:advice => advice} %> 
+            <% end %>
+            <% @advices.where(ref: '6', completed: true).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% else %>
+            <% @advices.where(ref: '6', completed: nil).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% end %>
+          <% if c.cms == false %>
+            <% @advices.where(ref: '7', completed: nil).each do |advice| %> 
+              <%= render :partial => "todo", :locals => {:advice => advice} %> 
+            <% end %>
+            <% @advices.where(ref: '7', completed: true).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% else %>
+            <% @advices.where(ref: '7', completed: nil).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% end %>
+          <% if c.seo == false %>
+            <% @advices.where(ref: '8', completed: nil).each do |advice| %> 
+              <%= render :partial => "todo", :locals => {:advice => advice} %> 
+            <% end %>
+            <% @advices.where(ref: '8', completed: true).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% else %>
+            <% @advices.where(ref: '8', completed: nil).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% end %>
+          <% if c.crowdfunding == false %>
+            <% @advices.where(ref: '9', completed: nil).each do |advice| %> 
+              <%= render :partial => "todo", :locals => {:advice => advice} %> 
+            <% end %>
+            <% @advices.where(ref: '9', completed: true).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% else %>
+            <% @advices.where(ref: '9', completed: nil).each do |advice| %> 
+              <%= render :partial => "done", :locals => {:advice => advice} %> 
+            <% end %>
+          <% end %>
         <% end %>
-      <% else %>
-        <p> Vous avez déjà Facebook</p>
-      <% end %>
-      <% if c.twitter == false %>
-        <% @advices.where(ref: '2').each do |advice| %>
-          <%= render :partial => "onglet", :locals => {:advice => advice} %>
-        <% end %>
-      <% else %>
-        <p> Vous avez déjà Twitter</p>
-      <% end %>
-      <% if c.linkedin == false %>
-        <% @advices.where(ref: '3').each do |advice| %>
-          <%= render :partial => "onglet", :locals => {:advice => advice} %>
-        <% end %>
-      <% else %>
-        <p> Vous avez déjà Twitter</p>
-      <% end %>
-      <% if c.instagram == false %>
-        <% @advices.where(ref: '4').each do |advice| %>
-          <%= render :partial => "onglet", :locals => {:advice => advice} %>
-        <% end %>
-      <% else %>
-        <p> Vous avez déjà Instagram</p>
-      <% end %>
-      <% if c.viadeo == false %>
-        <% @advices.where(ref: '5').each do |advice| %>
-          <%= render :partial => "onglet", :locals => {:advice => advice} %>
-        <% end %>
-      <% else %>
-        <p> Vous avez déjà Viadeo</p>
-      <% end %>
-      <% if c.community == false %>
-        <% @advices.where(ref: '6').each do |advice| %>
-          <%= render :partial => "onglet", :locals => {:advice => advice} %>
-        <% end %>
-      <% else %>
-        <p> Vous êtes déjà Community Manager</p>
-      <% end %>
-      <% if c.cms == false %>
-        <% @advices.where(ref: '7').each do |advice| %>
-          <%= render :partial => "onglet", :locals => {:advice => advice} %>
-        <% end %>
-      <% else %>
-        <p> Vous avez déjà un CMS</p>
-      <% end %>
-      <% if c.seo == false %>
-        <% @advices.where(ref: '8').each do |advice| %>
-          <%= render :partial => "onglet", :locals => {:advice => advice} %>
-        <% end %>
-      <% else %>
-        <p> Vous avez déjà un bon référencement</p>
-      <% end %>
-      <% if c.crowdfunding == false %>
-        <% @advices.where(ref: '9').each do |advice| %>
-          <%= render :partial => "onglet", :locals => {:advice => advice} %>
-        <% end %>
-      <% else %>
-        <p> Vous utilisez déjà une plateforme de crowdfunding</p>
-      <% end %>
-    <% end %>
-  </table>
-</div>
+      </table>
+    </div>
     <!-- 	Si il n'y a pas ces 2 conditions on l'invite à remplir le questionnaire -->
-    <% else %>
-	<%= link_to 'Commencer maintenant !', new_checklist_path %>
-<% end %>
+  <% else %>
+	 <%= link_to 'Commencer maintenant !', new_checklist_path %>
+  <% end %>

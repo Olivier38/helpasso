@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :checklists
   devise_for :users
   resources :categories, only: [:index, :show]
   resources :advices
+  match '/complete/:id' => 'advices#complete', as: 'complete_advices', via: :put
+  resources :checklists
   root 'advices#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
