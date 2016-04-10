@@ -29,17 +29,28 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
-            <% unless current_user.checklists.count > 0 %>
+            <% if current_user.checklists.count == "0" %>
               <li class="btn"><%= link_to 'Commencer', new_checklist_path %></li>
+            <% else %>
+              <li class="btn">  
+                <%= link_to(root_path) do %>
+                  <div class="bar-prog">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @progress %>" aria-valuemin="10" aria-valuemax="100" style="width:<%= @progress %>%">
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </li>
             <% end %>
-            <li class="btn"><%= link_to "Mon compte" , edit_user_registration_path %></li>
-            <li class="btn"><%= link_to "Déconnexion" , destroy_user_session_path , method: :delete %></li>
+            <li class="btn"><%= link_to "Mon compte", edit_user_registration_path %></li>
+            <li class="btn"><%= link_to "Déconnexion", destroy_user_session_path , method: :delete %></li>
         </ul>
       <% else %>
           <ul class="nav navbar-nav navbar-right">
             <li class="btn"><%= link_to 'Commencer', new_checklist_path %></li>
-            <li class="btn"><%= link_to "Login" , new_user_session_path %></li>
-            <li class="btn"><%= link_to "Inscription" , new_user_registration_path %></li>
+            <li class="btn"><%= link_to "Login", new_user_session_path %></li>
+            <li class="btn"><%= link_to "Inscription", new_user_registration_path %></li>
         </ul>
         <% end %>
 

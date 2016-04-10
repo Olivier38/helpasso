@@ -1,6 +1,4 @@
 <% if user_signed_in? && current_user.checklists.exists? %><!-- si l'utilisateur est loggé et a déjà remplit le questionnaire, on lui affiche les advices. -->
-
-
     <div class="checklist col-xs-4">
       <div id="btn-checklist">
         <p>Check-List</p>
@@ -151,6 +149,8 @@
         <% end %>
       </table>
     </div>
+    </div>
+
     <!-- 	Si il n'y a pas ces 2 conditions on l'invite à remplir le questionnaire -->
   <% else %>
 	 <%= link_to 'Commencer maintenant !', new_checklist_path %>

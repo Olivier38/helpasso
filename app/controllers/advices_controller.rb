@@ -10,6 +10,7 @@ class AdvicesController < ApplicationController
     @categories = Category.all
     @checklists = Checklist.all
     if user_signed_in?
+    @progress = current_user.points
     @checklist = current_user.checklists
     @user_advices = UserAdvice.where(user_id: current_user).pluck(:advice_id)  
   end
@@ -75,6 +76,9 @@ end
 
   def complete
     UserAdvice.create(user_id: current_user.id, advice_id: @advice.id)
+    current_user.increment(:points, 10)
+    current_user.save
+    flash[:notice] = "+ 10"
     redirect_to root_path
   end
 
