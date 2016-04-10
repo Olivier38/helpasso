@@ -29,13 +29,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
-           <li class="btn"><%= link_to "Mon compte" , edit_user_registration_path %></li>
-           <li class="btn"><%= link_to "Déconnexion" , destroy_user_session_path , method: :delete %></li>
+            <% unless current_user.checklists.count > 0 %>
+              <li class="btn"><%= link_to 'Commencer', new_checklist_path %></li>
+            <% end %>
+            <li class="btn"><%= link_to "Mon compte" , edit_user_registration_path %></li>
+            <li class="btn"><%= link_to "Déconnexion" , destroy_user_session_path , method: :delete %></li>
         </ul>
-        <% else %>
+      <% else %>
           <ul class="nav navbar-nav navbar-right">
-           <li class="btn"><%= link_to "Login" , new_user_session_path %></li>
-           <li class="btn"><%= link_to "Inscription" , new_user_registration_path %></li>
+            <li class="btn"><%= link_to 'Commencer', new_checklist_path %></li>
+            <li class="btn"><%= link_to "Login" , new_user_session_path %></li>
+            <li class="btn"><%= link_to "Inscription" , new_user_registration_path %></li>
         </ul>
         <% end %>
 
