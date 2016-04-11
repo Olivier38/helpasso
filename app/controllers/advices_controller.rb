@@ -10,8 +10,6 @@ class AdvicesController < ApplicationController
     @categories = Category.all
     @checklists = Checklist.all
     if user_signed_in?
-    @progress = current_user.points
-    @checklist = current_user.checklists
     @user_advices = UserAdvice.where(user_id: current_user).pluck(:advice_id)  
   end
 end
