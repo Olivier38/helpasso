@@ -11,19 +11,10 @@
 
       <div class="form-inputs">
         <div class="formCheck">
-          <%= f.input :facebook, label: 'Animez-vous une page Facebook?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
+          <%= f.input :networks, label: 'Votre association a-t-elle un profil sur chacun de ces réseaux sociaux (facebook ; twitter ; instagram) ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
         </div>
         <div class="formCheck">
-          <%= f.input :twitter, label: 'Animez-vous une page Twitter ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-        </div>
-        <div class="formCheck">
-          <%= f.input :linkedin, label: 'Etes-vous présent sur le réseau social professionnel LinkedIn ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-        </div>
-        <div class="formCheck">
-          <%= f.input :viadeo, label: 'Etes-vous présent sur le réseau social professionnel Viadeo ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
-        </div>
-        <div class="formCheck">
-          <%= f.input :instagram, label: 'Etes-vous présent sur Instagram ?', error: 'Username is mandatory, please specify one', as: :radio_buttons %>
+          <%= f.input :pro_networks, label: 'Votre association a-t-elle un profil sur ces réseaux sociaux professionnels (LinkedIn, Viadeo, Xing) ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>
         </div>
         <div class="formCheck">
           <%= f.input :community, label: 'Postez-vous régulièrement des informations sur les réseaux sociaux ?', error: 'Merci de choisir une réponse', as: :radio_buttons %>

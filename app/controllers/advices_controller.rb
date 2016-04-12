@@ -1,5 +1,6 @@
 class AdvicesController < ApplicationController
   before_action :set_advice, only: [:show, :edit, :update, :destroy, :complete]
+  before_action :set_checklists, only: [:index, :complete]
 
   # GET /advices
   # GET /advices.json
@@ -74,9 +75,11 @@ end
 
   def complete
     UserAdvice.create(user_id: current_user.id, advice_id: @advice.id)
-    current_user.increment(:points, 10)
+    @falses = current_user.checklists.first.attributes.values.count(false)
+    @increment = 90 / (@falses*4)
+    current_user.increment(:points, @increment)
     current_user.save
-    flash[:notice] = "+ 10"
+    flash[:notice] = "+ #{@increment}"
     redirect_to root_path
   end
 
@@ -86,6 +89,9 @@ end
       @advice = Advice.find(params[:id])
     end
 
+    def set_checklists
+      @checklists = Checklist.all
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     # advice[status] = "too"
     # advice[name] = "foo"

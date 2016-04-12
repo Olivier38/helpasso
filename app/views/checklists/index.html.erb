@@ -21,18 +21,15 @@
   <tbody>
     <% @checklists.each do |checklist| %>
       <tr>
-        <td><%= checklist.facebook %></td>
-        <td><%= checklist.twitter %></td>
-        <td><%= checklist.linkedin %></td>
-        <td><%= checklist.viadeo %></td>
-        <td><%= checklist.instagram %></td>
+        <td><%= checklist.networks %></td>
+        <td><%= checklist.pro_networks %></td>
         <td><%= checklist.community %></td>
         <td><%= checklist.cms %></td>
         <td><%= checklist.seo %></td>
         <td><%= checklist.crowdfunding %></td>
         <td><%= link_to 'Show', checklist %></td>
         <td><%= link_to 'Edit', edit_checklist_path(checklist) %></td>
-        <td><%= link_to 'Destroy', checklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', checklist, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

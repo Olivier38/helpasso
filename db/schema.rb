@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410112500) do
+ActiveRecord::Schema.define(version: 20160412111610) do
 
   create_table "advices", force: :cascade do |t|
     t.string   "name"
@@ -36,11 +36,8 @@ ActiveRecord::Schema.define(version: 20160410112500) do
   end
 
   create_table "checklists", force: :cascade do |t|
-    t.boolean  "facebook"
-    t.boolean  "twitter"
-    t.boolean  "linkedin"
-    t.boolean  "viadeo"
-    t.boolean  "instagram"
+    t.boolean  "networks"
+    t.boolean  "pro_networks"
     t.boolean  "community"
     t.boolean  "cms"
     t.boolean  "seo"
@@ -63,19 +60,19 @@ ActiveRecord::Schema.define(version: 20160410112500) do
   add_index "user_advices", ["user_id"], name: "index_user_advices_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                                          default: "",   null: false
+    t.string   "encrypted_password",                             default: "",   null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                                  default: 0,    null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.integer  "points",                 default: 10
+    t.datetime "created_at",                                                    null: false
+    t.datetime "updated_at",                                                    null: false
+    t.decimal  "points",                 precision: 5, scale: 2, default: 10.0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

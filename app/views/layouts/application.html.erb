@@ -24,15 +24,15 @@
       <% end %>
     </div>
 
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
             <% if current_user.checklists.count == "0" %>
-              <li class="btn"><%= link_to 'Commencer', new_checklist_path %></li>
+              <li class="btn"><%= link_to 'Commencer', new_checklist_path %>
             <% else %>
-              <li class="btn">  
+              <li class="btn"><%= notice %></li>
+              <li class="btn"> 
                 <%= link_to(root_path) do %>
                   <div class="bar-prog">
                     <div class="progress">
@@ -63,8 +63,8 @@
 
 
       
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+<!--       <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p> -->
       <%= yield %>
 
     </div>
