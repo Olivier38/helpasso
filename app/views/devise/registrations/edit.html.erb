@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Modification du compte</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -13,17 +13,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(Ignorez si vous ne souhaitez pas changer de mot de passe)</i><br />
+    <%= f.label :nouveau_mot_de_passe %> <i>(Ignorez ceci si vous ne souhaitez pas changer de mot de passe)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :confirmer_votre_nouveau_mot_de_passe %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(Nous avons besoin de votre mot de passe pour confirmer les changements)</i><br />
+    <%= f.label :mot_de_passe_actuel %> <i>(Nous avons besoin de votre mot de passe pour confirmer les changements)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
@@ -34,6 +34,6 @@
 
 <h3>Supprimer mon compte</h3>
 
-<p><%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Vous êtes sûr ?" }, method: :delete %></p>
+<p><%= button_to "Supprimer", registration_path(resource_name), data: { confirm: "Vous êtes sûr ?" }, method: :delete %></p>
 
 <%= link_to "Retour", :back %>
