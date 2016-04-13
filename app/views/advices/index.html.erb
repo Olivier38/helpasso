@@ -153,5 +153,21 @@
 
     <!-- 	Si il n'y a pas ces 2 conditions on l'invite à remplir le questionnaire -->
   <% else %>
-	 <%= link_to 'Commencer maintenant !', new_checklist_path %>
+  
+      <!-- video_tag("Motion-Design-Help-Asso.mp4", size="100%") -->
+      <div id="video-bg">
+        <a href="#"><%= image_tag("HelpAssobaseline.png", :width => "50%")%></a>
+      </div>
+      <div class="text-center col-xs-12 col-sm-8 col-sm-offset-2" id="explain-concept">
+        <h1>Help Asso vous aide à vous numériser</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, unde officia quos officiis reiciendis</br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quis soluta nam.</p>
+        <div id="btn-not-full"><%= link_to 'Tester !', new_checklist_path %></div>
+      </div>
+    
+
+
+    
+
+	 
   <% end %>

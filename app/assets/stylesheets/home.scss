@@ -1,3 +1,65 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#video-bg{
+  text-align: center;
+  background-color: #F4F4F6;
+  width: 100vw;
+  padding-top: 8rem;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  margin-left: -2rem;
+}
+
+#explain-concept{
+
+  color: #5A5A5A;
+  h1 {
+    font-weight: 300;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+  }
+  p{
+    color: #a2a2a2;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 3rem;
+  }
+}
+
+#btn-not-full {
+  padding: 1rem 7rem;
+  background-color: white;
+  display: inline-block;
+  border-radius: 14px;
+  border-color: #239E86;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 9rem;
+  
+  a {
+    color: #239E86;
+    font-size: 2.5rem;
+    font-weight: 300;
+    
+    &:hover{
+      text-decoration: none;
+      color: #5ac1ad;
+    }
+  }
+  &:hover{
+      border-color: #5ac1ad;
+    }
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}

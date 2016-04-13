@@ -5,11 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <body>   
   
   
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -48,8 +49,8 @@
         </ul>
       <% else %>
           <ul class="nav navbar-nav navbar-right">
-            <li class="btn"><%= link_to 'Commencer', new_checklist_path %></li>
-            <li class="btn"><%= link_to "Login", new_user_session_path %></li>
+            <li class="btn" id="btn-full"><%= link_to 'Tester', new_checklist_path %></li>
+            <li class="btn"><%= link_to "Connexion", new_user_session_path %></li>
             <li class="btn"><%= link_to "Inscription", new_user_registration_path %></li>
         </ul>
         <% end %>
@@ -63,11 +64,20 @@
 
 
       
+<!--
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+-->
       <%= yield %>
-
     </div>
+<footer class="col-xs-12">
+        <p>© 2016 - Help Asso</p>
+        <div id="share">
+          <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+</footer> 
+
 
 
 </body>
