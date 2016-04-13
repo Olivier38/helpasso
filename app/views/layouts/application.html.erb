@@ -25,15 +25,15 @@
       <% end %>
     </div>
 
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
             <% if current_user.checklists.count == "0" %>
-              <li class="btn"><%= link_to 'Commencer', new_checklist_path %></li>
+              <li class="btn"><%= link_to 'Commencer', new_checklist_path %>
             <% else %>
-              <li class="btn">  
+              <li class="btn"><%= notice %></li>
+              <li class="btn"> 
                 <%= link_to(root_path) do %>
                   <div class="bar-prog">
                     <div class="progress">
@@ -45,7 +45,7 @@
               </li>
             <% end %>
             <li class="btn"><%= link_to "Mon compte", edit_user_registration_path %></li>
-            <li class="btn"><%= link_to "Déconnexion", destroy_user_session_path , method: :delete %></li>
+            <li class="btn"><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
         </ul>
       <% else %>
           <ul class="nav navbar-nav navbar-right">
@@ -63,11 +63,12 @@
     <div class="container-fluid">
 
 
-      
+
 <!--
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 -->
+
       <%= yield %>
     </div>
 <footer class="col-xs-12">
@@ -81,6 +82,16 @@
 
 
 </body>
+<script type="text/javascript">
+$('label').click(function() {
+  $(this).addClass("checked");
+  var page = $(this);
+  var speed = 750; // Durée de l'animation (en ms)
+  $('html, body').animate( { scrollTop: $(page).offset().top + 150}, speed ); // Go
+});
+  $( "input[value='Create Checklist']").val("Commencer l'analyse").addClass('submit');
+
+</script>
 </html>
 
 
