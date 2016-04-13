@@ -28,7 +28,7 @@ class ChecklistsController < ApplicationController
 
     respond_to do |format|
       if @checklist.save
-        format.html { redirect_to root_path, notice: 'Merci pour ces précisions ! Voici quelques recommandations pour vous aider à mieux communiquer sur le web !' }
+        format.html { redirect_to root_path }
         format.json { render :index, status: :created, location: @advices }
       else
         format.html { render :new }
