@@ -75,8 +75,8 @@ end
 
   def complete
     UserAdvice.create(user_id: current_user.id, advice_id: @advice.id)
-    @falses = current_user.checklists.first.attributes.values.count(false)
-    @increment = 90 / (@falses*4)
+    @falses = current_user.checklists.first.attributes.values.count(false) # On compte ici le nombre de réponse "non" dans le formulaire
+    @increment = 90 / (@falses*4) # Un user a gagné 10 points en créant son compte, le maximum est 100 points. Le nombre de points gagné = 90 / le nombre de réponses "non" * le nombre d'advices par questions
     current_user.increment(:points, @increment)
     current_user.save
     flash[:notice] = "+ #{@increment}"

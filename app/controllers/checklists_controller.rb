@@ -28,7 +28,7 @@ class ChecklistsController < ApplicationController
 
     respond_to do |format|
       if @checklist.save
-        format.html { redirect_to root_path }
+        format.html { redirect_to root_path}
         format.json { render :index, status: :created, location: @advices }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class ChecklistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def checklist_params
-      params.require(:checklist).permit(:facebook, :twitter, :linkedin, :viadeo, :instagram, :community, :cms, :seo, :crowdfunding)
+      params.require(:checklist).permit(:networks, :pro_networks, :community, :cms, :seo, :crowdfunding)
     end
 end
