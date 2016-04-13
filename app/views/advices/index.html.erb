@@ -109,10 +109,40 @@
     <!-- 	Si il n'y a pas ces 2 conditions on l'invite à remplir le questionnaire -->
   <% else %>
   
-      <!-- video_tag("Motion-Design-Help-Asso.mp4", size="100%") -->
+      <!-- video_tag("https://youtu.be/xZBtdqrpQT8", size="100%") -->
       <div id="video-bg">
-        <a href="#"><%= image_tag("HelpAssobaseline.png", :width => "50%")%></a>
+
+       
+       
+       
+       
+
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        <a href="#" data-toggle="modal" data-target="#myModal"><%= image_tag("play.svg", :width => "10%", :id => 'btn-play')%></a>
       </div>
+      <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <iframe width="100%" height="415" src="https://www.youtube.com/embed/xZBtdqrpQT8" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+     
+     
+     
       <div class="text-center col-xs-12 col-sm-8 col-sm-offset-2" id="explain-concept">
         <h1>Help Asso vous aide à vous numériser</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, unde officia quos officiis reiciendis<br/>
