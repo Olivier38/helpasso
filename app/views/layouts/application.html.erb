@@ -32,7 +32,7 @@
             <% if current_user.checklists.count == "0" %>
               <li class="btn"><%= link_to 'Commencer', new_checklist_path %>
             <% else %>
-              <li class="btn"><%= notice %></li>
+              <li class="btn notice"><p><%= notice %></p></li>
               <li class="navbar-text"> 
 
                   <div class="bar-prog">
@@ -83,6 +83,12 @@ $('label').click(function() {
   $('html, body').animate( { scrollTop: $(page).offset().top + 150}, speed ); // Go
 });
   $( "input[value='Create Checklist']").val("Commencer l'analyse").addClass('submit');
+
+  $(function() {
+    $('.notice').delay(500).fadeIn('normal', function() {
+      $(this).delay(4500).fadeOut();
+      });
+    });
 
 </script>
 </html>
