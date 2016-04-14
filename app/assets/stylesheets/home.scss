@@ -11,10 +11,19 @@
   text-align: center;
   background-color: #F4F4F6;
   width: 100vw;
-  padding-top: 8rem;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
-  margin-left: -2rem;
+  margin-top: 6rem;
+  background-image: url("HelpAsso-baseline.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#img-bg{
+  margin-top: 6rem;
 }
 
 #explain-concept{
@@ -66,4 +75,16 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
+}
+
+
+#btn-play{
+  display: block;
+  width: 130%;
+  position: relative;
+  transition: all 0.3s ease;
+  &:hover{
+    width: 150%;
+    left: -1.5rem;
+  }
 }

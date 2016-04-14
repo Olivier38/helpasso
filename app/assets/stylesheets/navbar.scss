@@ -18,11 +18,12 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-top: 0.5rem;
+ &:hover{
+    background-color: #43b9a2;
+}
 }
 
-.btn-full a:hover{
-    background-color: rgba(35, 158, 134, 0.8);
-}
+
 
 .navbar-header {
    margin-top: 0.6rem;

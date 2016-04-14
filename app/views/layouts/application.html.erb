@@ -34,14 +34,13 @@
             <% else %>
               <li class="btn"><%= notice %></li>
               <li class="navbar-text"> 
-         
+
                   <div class="bar-prog">
                     <div class="progress">
                       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @progress %>" aria-valuemin="10" aria-valuemax="100" style="width:<%= @progress %>%">
                       </div>
                     </div>
                   </div>
-               
               </li>
             <% end %>
             <li class="btn"><%= link_to "Mon compte", edit_user_registration_path %></li>
@@ -87,9 +86,3 @@ $('label').click(function() {
 
 </script>
 </html>
-
-
-
-
-
-
