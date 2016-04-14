@@ -3,19 +3,30 @@
            <div class="reset panel panel-default cat<%= advice.category_id %>">
             <div class="reset panel-heading cat<%= advice.category_id %>" role="tab" id= "heading<%= @class += 1%>">
               <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= @class%>" aria-expanded="false" aria-controls="collapse<%= @class%>">
-                 
-<!--mettre un lien img  dans le link_to "done !"-->
-                  <%= advice.name %> | <%= link_to "Done !", complete_advices_path(advice), method: :put %>
+               
+                <%= link_to(complete_advices_path(advice), method: :put) do %>
+                  <%= image_tag("no-check.svg", :width => "25rem", :class => 'not-check')%>
+                  <% end %>
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= @class%>" aria-expanded="false" aria-controls="collapse<%= @class%>">                  
+                  <%= advice.name %>
+                   
+                   
+                   
                     <% if user_signed_in? && current_user.email == "admin@helpasso.fr" %>
                       <%= link_to 'Show', advice %>
                       <%= link_to 'Edit', edit_advice_path(advice) %>
                       <%= link_to 'Destroy', advice, method: :delete, data: { confirm: 'Are you sure?' } %>
                     <% end %>
+                    
                 </a>
                 </h4>
               </div>
-              <div id="collapse<%= @class%>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= @class %>">
+              
+              
+              
+              
+              
+              <div id="collapse<%= @class%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= @class %>">
                 <div class="panel-body">
                   
                   <p><%= advice.content %></p>
@@ -28,6 +39,6 @@
                    <%= render :partial => "sites/form", :locals => {:advice => advice} %>
                     <!--Bouttons show - edit - Destroy-->
                           </tr>
-                                  </div>
-                                </div>
-                            </div>
+                  </div>
+                </div>
+            </div>
