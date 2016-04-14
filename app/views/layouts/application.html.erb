@@ -76,11 +76,17 @@
 
 </body>
 <script type="text/javascript">
+$(document).ready(function(){
+  $('.carousel').carousel("pause");
+});
+
 $('label').click(function() {
   $(this).addClass("checked");
-  var page = $(this);
-  var speed = 750; // Durée de l'animation (en ms)
-  $('html, body').animate( { scrollTop: $(page).offset().top + 150}, speed ); // Go
+  $(".carousel").carousel("next");
+  $('.carousel').carousel("pause");
+});
+$('.left').click(function() {
+  $('.carousel').carousel("pause");
 });
   $( "input[value='Create Checklist']").val("Commencer l'analyse").addClass('submit');
 
@@ -89,6 +95,7 @@ $('label').click(function() {
       $(this).delay(4500).fadeOut();
       });
     });
-
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </html>

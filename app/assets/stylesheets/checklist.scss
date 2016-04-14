@@ -13,7 +13,6 @@
   margin-left: 3rem;
   padding: 2rem 3.5rem !important;
   display: inline-block;
-  
 }
 
 ul {
@@ -79,24 +78,24 @@ ul {
 }
 
 .radio label {
-  padding: 0!important;
-  background: #3498db;
+  background: #224554;
   height: 50px;
   padding: 10px !important;
-  width: 200px;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
+  max-width: 130px !important;
+  min-width: 130px !important;
+  background-image: -webkit-linear-gradient(top, #224554, #224554);
+  background-image: -moz-linear-gradient(top, #224554, #224554);
+  background-image: -ms-linear-gradient(top, #224554, #224554);
+  background-image: -o-linear-gradient(top, #224554, #224554);
+  background-image: linear-gradient(to bottom, #224554, #224554);
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 10px 20px 10px 20px;
   text-decoration: none;
+  display:inline-block !important;
 }
 
 .checked {
@@ -121,7 +120,6 @@ ul {
 }
 
 .radio label:hover {
-
   padding: 10px !important;
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
   background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
@@ -131,29 +129,15 @@ ul {
   text-decoration: none;
 }
 
-
 .radio label input {
   display:none;
 }
 
-
-
-
-
 .submit {
-  padding: 0!important;
   background: #3498db;
   height: 50px;
   padding: 10px !important;
   width: 200px;
-  position: relative;
-  left:50%;
-  -webkit-transform: translateX(-50%);
-       -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-         -o-transform: translateX(-50%);
-            transform: translateX(-50%);
-  bottom: 300px;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
   background-image: -ms-linear-gradient(top, #3498db, #2980b9);
@@ -165,12 +149,18 @@ ul {
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 10px 20px 10px 20px;
   text-decoration: none;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 50%;
 }
 
 .submit:hover {
-
   padding: 10px !important;
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
   background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
@@ -179,3 +169,94 @@ ul {
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+
+.carousel-inner {
+  height: 100vh;
+}
+
+.item {
+  height:100vh;
+}
+
+.formCheck{
+  top:50%;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.headerForm {
+  position: fixed;
+  z-index: 9999;
+  width: 100vw;
+  height: 80px;
+  top:65px;
+  background: white;
+  border-top:solid #ADAFB1 1px;
+}
+
+.headerForm h1 {
+  margin-left:50px;
+}
+.carousel ol {
+  top:100px;
+  height: 0;
+  z-index: 9999;
+}
+.carousel ol li{
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 40px !important;
+  border:none;
+  background: #666666;
+
+}
+#headerForm1 {
+  background: #EE5350;
+}
+#headerForm2 {
+  background: #FDD735;
+}
+#headerForm3 {
+  background: #4DB6AC;
+}
+#headerForm4 {
+  background: #224554;
+}
+#headerForm5 {
+  background: #FDD735;
+}
+#headerForm6 {
+  background: #666666;
+}
+.carousel ol .active {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 100px;
+  -webkit-transform: translateY(10%);
+       -moz-transform: translateY(10%);
+        -ms-transform: translateY(10%);
+         -o-transform: translateY(10%);
+            transform: translateY(10%);
+}
+.carousel ol div {
+  border-top:dashed black;
+  position:relative;
+  top: 20px;
+}
+
+/*
+
+#EE5350
+
+#FDD735
+
+#4DB6AC
+
+#224554
+
+#FDD735
+
+*/

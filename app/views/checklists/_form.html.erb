@@ -9,30 +9,90 @@
     <%= simple_form_for (@checklist) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <div class="formCheck">
-          <%= f.input :networks, label: 'Votre association a-t-elle un profil sur chacun de ces réseaux sociaux (facebook ; twitter ; instagram) ?', as: :radio_buttons %>
-        </div>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+
+      <li id="headerForm1" data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li id="headerForm2" data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li id="headerForm3" data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li id="headerForm4" data-target="#carousel-example-generic" data-slide-to="3"></li>
+      <li id="headerForm5" data-target="#carousel-example-generic" data-slide-to="4"></li>
+      <li id="headerForm6" data-target="#carousel-example-generic" data-slide-to="5"></li>
+    </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="formCheck">
+        <%= f.input :networks, label: 'Votre association a-t-elle un profil sur chacun de ces réseaux sociaux (facebook ; twitter ; instagram) ?', as: :radio_buttons%>
+      </div>
+    <div class="carousel-caption">
+      <!-- title -->
+    </div>
+  </div>
+    <div class="item">
         <div class="formCheck">
           <%= f.input :pro_networks, label: 'Votre association a-t-elle un profil sur ces réseaux sociaux professionnels (LinkedIn, Viadeo, Xing) ?', as: :radio_buttons %>
         </div>
+        <div class="carousel-caption">
+          <!-- title -->
+      </div>
+    </div>
+      <div class="item">
         <div class="formCheck">
           <%= f.input :community, label: 'Postez-vous régulièrement des informations sur les réseaux sociaux ?', as: :radio_buttons %>
         </div>
+        <div class="carousel-caption">
+          <!-- title -->
+      </div>
+    </div>
+      <div class="item">
         <div class="formCheck">
           <%= f.input :cms, label: 'Utilisez-vous un système de gestion de contenu (Wordpress, Wix, etc.) ?', as: :radio_buttons %>
         </div>
+        <div class="carousel-caption">
+          <!-- title -->
+      </div>
+    </div>
+      <div class="item">
         <div class="formCheck">
         <%= f.input :seo, label: 'Votre site internet s\'affiche t-il dans les 10 premières propositions lors d\'une recherche sur Google ?',  as: :radio_buttons %>
         </div>
+        <div class="carousel-caption">
+          <!-- title -->
+      </div>
+    </div>
+      <div class="item">
         <div class="formCheck">
         <%= f.input :crowdfunding, label: 'Avez-vous déjà utilisé des plateformes de collecte de dons / crowdfunding ?', as: :radio_buttons %>
         </div>
+      <div class="carousel-caption">
+          <!-- title -->
       </div>
+    </div>
+    <div class="item">
+        <div class="formCheck">
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        </div>
+      <div class="carousel-caption">
+          <!-- title -->
+      </div>
+    </div>
 
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
+
+
+
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+
+</div> <!-- Carousel -->
+      
     <% end %>
 
 <% end %>
