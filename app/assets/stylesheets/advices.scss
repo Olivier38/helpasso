@@ -83,3 +83,43 @@
   opacity: 0;
   stroke-dashoffset: 13px;
 }
+
+
+.string{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #95989A;
+  font-size: 13px;
+  line-height: 18px;
+  display: block;
+  font-weight: 400;
+}
+input.btn.btn-full{
+  height: 4rem;
+  font-size: 1.4rem;
+  border: none;
+  position: relative;
+  bottom: 1px;
+}
+
+input.string.optional{
+  border-color: #95989A;
+  width: 30rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  padding-left: 2rem;
+}
+
+//Couleur du placeholder
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #E6E6E6;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #E6E6E6;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #E6E6E6;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #E6E6E6;
+}

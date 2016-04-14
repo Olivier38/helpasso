@@ -3,20 +3,27 @@
 
   <div>
     <% if advice.name == "Créer sa page Facebook" %>
-      <%= f.input :facebook, :placeholder => "www.facebook.com/", :label => "Vous avez créé votre page Facebook ? partagez-la !" %>
-      <%= f.button :submit, "Envoyer"%>
+    <%= f.input :facebook, :placeholder => "www.facebook.com/", :label => "Vous avez créé votre page Facebook ? partagez-la !" %>
+    <%= f.button :submit, "Envoyer"%>
     <% end %>
+    
+   
     <% if advice.name == "Créer un compte Twitter" %>
-      <%= f.input :twitter, :placeholder => "www.twitter.com/", :label => "Vous avez créé votre comtpe Twitter ? partagez-le !" %>
-      <%= f.button :submit, "Envoyer" %>
+    <ul class="list-inline">
+      <li><%= f.input :twitter, :placeholder => "www.twitter.com/", :label => "Vous avez créé votre comtpe Twitter ? partagez-le !" %></li>
+      <li><%= f.button :submit, "Envoyer", :class => 'btn-full' %></li>
+    </ul>
+    
     <% end %>
+    
     <% if advice.name == "Créer une page LinkedIn" %>
-      <%= f.input :linkedin, :placeholder => "www.linkedin.com/", :label => "Vous avez créé votre compte LinkedIn ? partagez-le !" %>
-      <%= f.button :submit, "Envoyer" %>
+    <%= f.input :linkedin, :placeholder => "www.linkedin.com/", :label => "Vous avez créé votre compte LinkedIn ? partagez-le !" %>
+    <%= f.button :submit, "Envoyer" %>
     <% end %>
+    
     <% if advice.name == "Créer son site sur Quomodo, Jimdo & Wordpress" %>
-      <%= f.input :website, :placeholder => "www.monsite.com/", :label => "Vous avez créé votre site web ? partagez-le !" %>
-      <%= f.button :submit, "Envoyer" %>
+    <%= f.input :website, :placeholder => "www.monsite.com/", :label => "Vous avez créé votre site web ? partagez-le !" %>
+    <%= f.button :submit, "Envoyer" %>
     <% end %>
   </div>
 <% end %>

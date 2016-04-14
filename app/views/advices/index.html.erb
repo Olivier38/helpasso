@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>            
-    <div class="container-right col-xs-8">
+    <div class="container-right col-xs-7 col-xs-offset-4">
       <table>
         <% @checklist.each do |c| %> <!-- On applique ce qui suit pour chaque questionnaire auquel l'utilisateur à répondu. ( Checklist = le questionnaire).  Si tout va bien, il n'a pu en remplir qu'un seul.) -->
           <% if c.networks == false %> <!-- Si la réponse à la première question est "non" -->
@@ -111,23 +111,6 @@
   
       <!-- video_tag("https://youtu.be/xZBtdqrpQT8", size="100%") -->
       <div id="video-bg">
-
-       
-       
-       
-       
-
-
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
         <a href="#" data-toggle="modal" data-target="#myModal"><%= image_tag("play.svg", :width => "10%", :id => 'btn-play')%></a>
       </div>
       <!-- Modal -->

@@ -1,5 +1,16 @@
+.checklist{
+  position: fixed !important;
+  margin-left: 4rem;
+  padding-top: 13vh;
+  p{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    color: #95989A !important;
+    margin: 0px;
+    }
+  }
+
 .container-right{
-  padding-top: 15vh;
+  padding-top: 13vh;
 }
 
 .btn-default {
@@ -13,12 +24,12 @@
   margin-left: 3rem;
   padding: 2rem 3.5rem !important;
   display: inline-block;
-  
 }
 
 ul {
   list-style-type:none !important;
 }
+
 .cercle{
   position: relative;
   top: 5.8rem;
@@ -47,14 +58,7 @@ ul {
 #color5 {
   background-color: #FDD735;
 }
-.checklist {
-  padding-top: 15vh;
-}
-.checklist p{
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-  color: #95989A !important;
-  margin: 0px;
-}
+
 #btn-checklist {
   display: inline-block;
   background-color: #fff;
@@ -136,8 +140,13 @@ ul {
   display:none;
 }
 
+.title-advice{
+  margin-left: 2rem;
+}
 
-
+.not-check{
+  margin-right: 1rem;
+}
 
 
 .submit {

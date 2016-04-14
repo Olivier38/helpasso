@@ -52,33 +52,33 @@
 }
 
 .btn-full{
-  background-color: #239E86;
-  border: solid 1px #239E86;
+  background-color: #4DB6AC;
+  border: solid 1px #4DB6AC;
   border-radius: 5px;
   color: white;
   padding: 1rem;
   
   &:hover{
     text-decoration: none;
-    background-color: #36b59d;
-    color: white;
+    background-color: #67c9c0;
+    color: white !important;
   }
 }
 
 .btn-not-full{
   background-color: #fff;
-  border: solid 2px #239E86;
+  border: solid 2px #4DB6AC;
   border-radius: 5px;
-  color: #239E86;
+  color: #4DB6AC;
   padding: 1rem;
   display: inline-block;
   float: left;
   
   &:hover{
     text-decoration: none;
-    border: solid 2px #39b79e;
+    border: solid 2px #67c9c0;
     background-color: #fff;
-    color: #39b79e;
+    color: #67c9c0;
   }
 }
 
