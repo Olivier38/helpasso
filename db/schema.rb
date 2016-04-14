@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412111610) do
+ActiveRecord::Schema.define(version: 20160414125152) do
 
   create_table "advices", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +48,18 @@ ActiveRecord::Schema.define(version: 20160412111610) do
   end
 
   add_index "checklists", ["user_id"], name: "index_checklists_on_user_id"
+
+  create_table "sites", force: :cascade do |t|
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "website"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sites", ["user_id"], name: "index_sites_on_user_id"
 
   create_table "user_advices", force: :cascade do |t|
     t.integer  "user_id"

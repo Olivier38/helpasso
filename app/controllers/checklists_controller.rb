@@ -1,4 +1,4 @@
-class ChecklistsController < ApplicationController
+  class ChecklistsController < ApplicationController
   before_action :set_checklist, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :only => [:new]
   # GET /checklists

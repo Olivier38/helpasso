@@ -25,6 +25,7 @@
                     <a href="<%= advice.link2 %>"><%= advice.linkname2 %></a><br>
                     <a href="<%= advice.link3 %>"><%= advice.linkname3 %></a>
                   </p>
+                   <%= render :partial => "sites/form", :locals => {:advice => advice} %>
                     <!--Bouttons show - edit - Destroy-->
                           </tr>
                                   </div>

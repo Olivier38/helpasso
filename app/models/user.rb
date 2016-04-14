@@ -25,4 +25,5 @@ class User < ActiveRecord::Base
   has_many :checklists
   has_many :user_advices
   has_many :advices, through: :user_advices
+  has_many :sites
 end

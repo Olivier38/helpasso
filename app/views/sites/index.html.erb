@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Facebook</th>
+      <th>Twitter</th>
+      <th>Linkedin</th>
+      <th>Website</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sites.each do |site| %>
+      <tr>
+        <td><%= site.facebook %></td>
+        <td><%= site.twitter %></td>
+        <td><%= site.linkedin %></td>
+        <td><%= site.website %></td>
+        <td><%= site.user %></td>
+        <td><%= link_to 'Show', site %></td>
+        <td><%= link_to 'Edit', edit_site_path(site) %></td>
+        <td><%= link_to 'Destroy', site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Site', new_site_path %>

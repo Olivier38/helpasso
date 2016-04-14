@@ -5,6 +5,7 @@ class AdvicesController < ApplicationController
   # GET /advices
   # GET /advices.json
   def index
+    @site = Site.new
     @menu = 0
     @class = 0
     @advices = Advice.all
