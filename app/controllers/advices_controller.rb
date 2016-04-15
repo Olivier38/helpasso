@@ -80,7 +80,7 @@ end
     @increment = 90 / (@falses*4.0) # Un user a gagné 10 points en créant son compte, le maximum est 100 points. Le nombre de points gagné = 90 / le nombre de réponses "non" * le nombre d'advices par questions
     current_user.increment(:points, @increment)
     current_user.save
-    flash[:notice] = "+ #{@increment.to_f}"
+    flash[:notice] = "+ #{@increment.to_i}"
     redirect_to root_path
   end
 
