@@ -249,15 +249,27 @@ ul {
   height: 30px !important;
   border-radius: 100px;
   -webkit-transform: translateY(10%);
-       -moz-transform: translateY(10%);
-        -ms-transform: translateY(10%);
-         -o-transform: translateY(10%);
-            transform: translateY(10%);
+     -moz-transform: translateY(10%);
+      -ms-transform: translateY(10%);
+       -o-transform: translateY(10%);
+          transform: translateY(10%);
 }
 .carousel ol div {
   border-top:dashed black;
   position:relative;
   top: 20px;
+}
+.backToAction {
+  border:solid red;
+  z-index: 99999;
+}
+.glyphicon-chevron-left {
+  margin-left: -14px;
+}
+
+
+.carousel-control {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.0001) 100%) !important;
 }
 
 /*
