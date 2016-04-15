@@ -1,29 +1,39 @@
-<h2>S'enregistrer</h2>
+<div class="form">
+   <div class="banner">
+      <h2>S'enregistrer</h2>
+           <div class="field">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+           </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+       <div class="spacing"></div>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+       <div class="spacing"></div>
+        <div class="field">
+          <%= f.label :mot_de_passe %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> caractères minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+       <div class="spacing"></div>
+        <div class="field">
+          <%= f.label :confirmer_le_mot_de_passe %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+       <div class="spacing"></div>
+        <div class="actions btn-signup">
+          <%= f.submit "S'enregistrer", :class => 'btn-not-full' %>
+        </div>
+      <% end %>
+
+
+
   </div>
-
-  <div class="field">
-    <%= f.label :mot_de_passe %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> caractères minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :confirmer_le_mot_de_passe %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "S'enregistrer" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

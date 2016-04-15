@@ -4,6 +4,7 @@
       <div id="btn-checklist">
         <p>Check-List</p>
       </div>
+      
       <div class="container-left">
         <div class="checklist-right">
             <% @categories.each do |c| %>
@@ -125,13 +126,55 @@
 </div>
      
      
-     
+     <div class="container">
       <div class="text-center col-xs-12 col-sm-8 col-sm-offset-2" id="explain-concept">
-        <h1>Help Asso vous aide à vous numériser</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, unde officia quos officiis reiciendis<br/>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quis soluta nam.</p>
+        <h1>HelpAsso aide votre association à être présent sur le net.</h1>
+        <p>Help asso vous permet de d’améliorer la présence numérique de votre association. Une checklist vous permettra d’avoir un suivi régulier et complet afin d’avoir des résultats de qualités.</p>
         <div id="btn-not-full"><%= link_to 'Tester !', new_checklist_path %></div>
       </div>
+    </div>
+
+    <div class="banner-white features-container">
+      <div class="container">
+        <div class="col-sm-6 features-illustration-col">
+        <%= image_tag("app_12.png", :width => "60%", :class => 'not-check')%>
+         </div>
+          <div class="col-sm-6 features-content-col">
+            <h4 class="features-title hidden-xs">Qu'est-ce que HelpAsso ?</h4>
+            <p>HelpAsso est une plateforme qui conseille les associations, pour les aider à s’adapter au numérique. Elle renseigne les points positifs et négatifs majeurs, et ressorts les grands points à développer pour l’association, pour avoir une meilleure présence digital.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="banner-white features-container">
+      <div class="container">
+        <div class="col-sm-6 features-illustration-col" id="explain-check">
+        <%= image_tag("checklist.png", :width => "50%", :class => 'not-check')%>
+         </div>
+          <div class="col-sm-6 features-content-col">
+            <h4 class="features-title hidden-xs">Alors comment faut il faire ?</h4>
+            <p>Rien de bien compliqué <br />
+Il vous suffira simplement de cocher ce que vous avez réalisé sur la checklist disponible sur le site. Vos données seront donc sauvegardés sur votre compte, et vous pourrez les récupérer, à tout moment :)</p>
+        </div>
+      </div>
+    </div>
+    
+    
+
+    <div class="banner-white features-container">
+      <div class="container">
+        <div class="col-sm-6 features-illustration-col" id="img-multi-check">
+        <%= image_tag("progress-bar.png", :width => "50%", :class => 'not-check')%>
+         </div>
+          <div class="col-sm-6 features-content-col">
+            <h4 class="features-title hidden-xs">Suivez votre progression !</h4>
+            <p>La barre de progression vous permet d’indiquer votre état d’avancement de votre réputationnumérique. Cette barre se remplira au fur et à mesure de vos différentes actions par exemple, la création de votre page facebook, twitter…</p>
+        </div>
+      </div>
+    </div>
+
+
+
 
 <footer class="col-xs-12">
         <p>© 2016 - Help Asso</p>
